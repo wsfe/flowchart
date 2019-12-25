@@ -168,9 +168,9 @@ export interface IFlowChartData {
 | allowFreeLink        | 是否允许自由连线         | `boolean`                                                                            | true                            |
 | maxSnapshots         | 最大快照数               | `number`                                                                             | 10                              |
 | readonly             | 是否只读                 | `boolean`                                                                            | 无                              |
-| chartClassNameMethod | 给每个元素上附加的 class | `(chart: FlowChartNode | FlowChartLink) => object | Array<object | string> | string` | `() => ({})`                    |
-| isChartDeletable     | 判断元素是否可被删除     | `(chart: FlowChartNode | FlowChartLink) => boolean`                                  | `() => true`                    |
-| isChartEditable      | 判断元素是否可编辑       | `(chart: FlowChartNode | FlowChartLink) => boolean`                                  | `() => true`                    |
+| chartClassNameMethod | 给每个元素上附加的 class | `(chart: FlowChartNode \| FlowChartLink) => object \| Array<object \| string> \| string` | `() => ({})`                    |
+| isChartDeletable     | 判断元素是否可被删除     | `(chart: FlowChartNode \| FlowChartLink) => boolean`                                  | `() => true`                    |
+| isChartEditable      | 判断元素是否可编辑       | `(chart: FlowChartNode \| FlowChartLink) => boolean`                                  | `() => true`                    |
 | canvasScale          | 画布缩放大小，须大于 0   | `number`                                                                             | 1                               |
 | canvasSize           | 画布尺寸                 | `{ width: number, height: number }`                                                  | `{ width: 1050, height: 1500 }` |
 | canvasPadding        | 画布内边距               | `number`                                                                             | 1000                            |
