@@ -49,7 +49,7 @@ module.exports = {
             opts.happyPackMode = false
             return opts
           })
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NODE_ENV !== 'production' || process.env.VUE_APP_IS_BUILDING_DOCS === 'true') {
       config
       .plugin('html')
         .tap((args) => {

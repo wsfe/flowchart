@@ -12,7 +12,7 @@ export declare const getRotatedCoordinate: (originCoordinate: ICanvasCoordinate,
  * @param containerSize 旋转后的节点/区域宽高
  * @param anchor 锚点位置信息
  */
-export declare const getAnchorCoordinate: (style: Pick<IControlStyle, "x" | "y" | "width" | "height" | "rotate">, containerSize: ICanvasSize, anchor: IControlAnchor) => ICanvasCoordinate;
+export declare const getAnchorCoordinate: (style: Pick<IControlStyle, "width" | "height" | "x" | "y" | "rotate">, containerSize: ICanvasSize, anchor: IControlAnchor) => ICanvasCoordinate;
 /**
  * 获取旋转后节点相对画布坐标，取 resizers 中最小的 x, y 点即可
  * @param resizers resizer 列表
