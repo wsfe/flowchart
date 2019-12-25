@@ -1,0 +1,58 @@
+.@{ws-flowchart-prefix}-resizer {
+  &__container {
+    position: absolute;
+  }
+
+  // 边框
+  // 使用四条 div ，实现一个空心的矩形
+  &__border {
+    position: absolute;
+    background-color: @ws-flowchart-boundary-border-color;
+
+    &_horizontal {
+      height: @ws-flowchart-boundary-border-width;
+      left: 0;
+    }
+
+    &_vertical {
+      width: @ws-flowchart-boundary-border-width;
+      top: 0;
+    }
+  }
+
+  &__resizer {
+    position: absolute;
+    box-sizing: content-box;
+    width: @ws-flowchart-resizer-size;
+    height: @ws-flowchart-resizer-size;
+    border: @ws-flowchart-resizer-border-width solid @ws-flowchart-resizer-border-color;
+    border-radius: @ws-flowchart-resizer-border-radius;
+    background-color: @ws-flowchart-resizer-background-color;
+
+    @half-size: (@ws-flowchart-resizer-size + 2 * @ws-flowchart-resizer-border-width) / 2;
+
+    &_top-left {
+      top: ceil(0 - @half-size);
+      left: ceil(0 - @half-size);
+      cursor: nwse-resize;
+    }
+
+    &_top-right {
+      top: ceil(0 - @half-size);
+      right: ceil(0 - @half-size);
+      cursor: nesw-resize;
+    }
+
+    &_bottom-left {
+      bottom: ceil(0 - @half-size);
+      left: ceil(0 - @half-size);
+      cursor: nesw-resize;
+    }
+
+    &_bottom-right {
+      bottom: ceil(0 - @half-size);
+      right: ceil(0 - @half-size);
+      cursor: nwse-resize;
+    }
+  }
+}

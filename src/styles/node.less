@@ -1,0 +1,90 @@
+.@{ws-flowchart-prefix}-node {
+  position: absolute;
+  outline: none;
+
+  &__rotate-container {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__control-component {
+    user-select: auto;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    // 让开发者决定要不要溢出吧
+    // overflow: hidden;
+  }
+
+  &__control-mask {
+    cursor: move;
+    position: absolute;
+  }
+}
+
+// anchors
+.@{ws-flowchart-prefix}-node {
+  transform-origin: top left;
+
+  &__anchor-container {
+    position: absolute;
+    display: none;
+
+    &_selected {
+      display: block;
+    }
+  
+    &_readonly {
+      display: none;
+  
+      &:hover {
+        display: none;
+      }
+    }
+  }
+
+  &__anchor {
+    position: absolute;
+    box-sizing: content-box;
+    width: @ws-flowchart-node-anchor-size;
+    height: @ws-flowchart-node-anchor-size;
+    border: @ws-flowchart-node-anchor-border-width solid;
+    border-color: @ws-flowchart-node-anchor-border-color;
+    border-radius: 50%;
+    background-color: @ws-flowchart-node-anchor-background-color;
+    cursor: crosshair;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: @ws-flowchart-node-anchor-size * 3;
+      height: @ws-flowchart-node-anchor-size * 3;
+      top: -@ws-flowchart-node-anchor-size;
+      left: -@ws-flowchart-node-anchor-size;
+      border-radius: 50%;
+      background-color: transparent;
+      cursor: crosshair;
+    }
+
+    &_will-link, &:hover {
+      border-color: @ws-flowchart-node-anchor-border-color-hover;
+
+      &::before {
+        background-color: @ws-flowchart-node-anchor-background-color-hover;
+      }
+    }
+
+    &_not-allowed {
+      cursor: not-allowed;
+
+      &::before {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.@{ws-flowchart-prefix}-link {
+  position: absolute;
+  outline: none;
+  pointer-events: none;
+
+  &__svg {
+    pointer-events: none;
+  }
+
+  &__line {
+    pointer-events: visible;
+    stroke: @ws-flowchart-link-stroke-color;
+    fill: @ws-flowchart-link-stroke-color;
+
+    &_selected {
+      stroke: @ws-flowchart-link-stroke-color-selected;
+      fill: @ws-flowchart-link-stroke-color-selected;
+    }
+  }
+
+  &__path {
+    stroke-width: @ws-flowchart-link-stroke-width;
+
+    &_hidden {
+      stroke: transparent;
+      stroke-width: @ws-flowchart-link-hidden-stroke-width;
+      fill: none;
+      cursor: pointer;
+    }
+  }
+
+  &__anchor {
+    cursor: move;
+    fill: transparent;
+    stroke: transparent;
+  }
+
+  &__editor {
+    pointer-events: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+
+    &-pre, &-textarea {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    &-pre {
+      cursor: pointer;
+      background-color: @ws-flowchart-link-text-display-background-color;
+    }
+
+    &-textarea {
+      box-sizing: border-box;
+      resize: none;
+    }
+  }
+}

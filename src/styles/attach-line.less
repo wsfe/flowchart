@@ -1,0 +1,23 @@
+.@{ws-flowchart-prefix}-attach-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: visible;
+
+  &__line {
+    position: absolute;
+    background-color: @ws-flowchart-attach-line-background-color;
+
+    &-horizontal {
+      left: 0;
+      height: @ws-flowchart-attach-line-width;
+    }
+
+    &-vertical {
+      top: 0;
+      width: @ws-flowchart-attach-line-width;
+    }
+  }
+}
